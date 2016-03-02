@@ -1,18 +1,21 @@
 import React from 'react';
-
+import {Col, Panel, Input, ButtonInput, Glyphicon} from 'react-bootstrap';
+// Render login component & handle loginUser for onClick btn
 class Login extends React.Component {
 	render() {
 		const {error} = this.props;
 		return (
-			<div>
-				<h1>Login</h1>
-				{error ? <p style={{color: 'red'}}>{error}</p> : null}
-				<form>
-					<input ref="email" type="email" placeholder="Email" />
-					<input ref="password" type="password" placeholder="Password" />
-					<button onClick={this.login.bind(this)} type="submit">Login</button>
-				</form>
-			</div>
+			<Col xs={12} sm={6} smOffset={3}>
+				<Panel>
+					<h1>Login</h1>
+					{error ? <p style={{color: 'red'}}>{error}</p> : null}
+					<form>
+						<Input ref="email" type="email" placeholder="Email" />
+						<Input ref="password" type="password" placeholder="Password" />
+						<ButtonInput onClick={this.login.bind(this)} bsStyle="primary" type="submit" value="Login"/>
+					</form>
+				</Panel>
+			</Col>
 		)
 	}
 
@@ -20,10 +23,10 @@ class Login extends React.Component {
 		e.preventDefault();
 		const {loginUser} = this.props;
 		const {email, password} = this.refs;
-		loginUser(email.value, password.value);
-		email.value = '';
-		password.value = '';
+		loginUser(email.getValue(), password.getValue());
+		email.getInputDOMNode().value = '';
+		password.getInputDOMNode().value = '';
 	}
 }
-
+// Export the existing user Login form component
 export default Login;

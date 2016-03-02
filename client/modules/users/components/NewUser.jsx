@@ -1,18 +1,21 @@
 import React from 'react';
-
+import { Col, Panel, Input, ButtonInput, Glyphicon } from 'react-bootstrap';
+// Render bootstrap component & handle createUser for onClick btn
 class NewUser extends React.Component {
 	render() {
 		const {error} = this.props;
 		return (
-			<div>
-				<h1>Register</h1>
-				{error ? <p style={{color: 'red'}}>{error}</p> : null}
-				<form>
-					<input ref="email" type="email" placeholder="Email" />
-					<input ref="password" type="password" placeholder="Password" />
-					<button onClick={this.createUser.bind(this)} type="submit">Sign Up</button>
-				</form>
-			</div>
+			<Col xs={12} sm={6} smOffset={3}>
+				<Panel>
+					<h1>Register</h1>
+					{error ? <p style={{color: 'red'}}>{error}</p> : null}
+					<form>
+						<Input ref="email" type="email" placeholder="Email" />
+						<Input ref="password" type="password" placeholder="Password" />
+						<ButtonInput onClick={this.createUser.bind(this)} bsStyle="primary" type="submit" value="Sign Up"/>
+					</form>
+				</Panel>
+			</Col>
 		)
 	}
 
@@ -20,10 +23,10 @@ class NewUser extends React.Component {
 		e.preventDefault();
 		const {create} = this.props;
 		const {email, password} = this.refs;
-		create(email.value, password.value);
-		email.value = '';
-		password.value = '';
+		create(email.getValue(), password.getValue());
+		email.getInputDOMNode().value = '';
+		password.getInputDOMNode().value = '';
 	}
 }
-
+// Export the NewUser registration form component
 export default NewUser;
