@@ -1,2 +1,0 @@
-# canyjournalermetrxjs
-mantr from kenrog
