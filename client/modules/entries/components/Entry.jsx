@@ -4,9 +4,11 @@ import { Grid, Row, Col } from 'react-bootstrap';
 const Entry = ({entry}) => (
   <Grid>
     <Row>
-      <Col xs={6} xsOffset={3}>
+      {entry.saving ? <p>Saving...</p> : null}
+      <Col xs={6} xsOffset={3} className='text-center'>
         <h2>{entry.title}</h2>
-        <p>{entry.text}</p>
+        <p>{entry.content}</p>
+        <p className='entry-date'>{moment(entry.createdAt).format("MMM D, h:m")}</p>
       </Col>
     </Row>
   </Grid>

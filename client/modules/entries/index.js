@@ -1,7 +1,11 @@
+import methodStubs from './configs/method_stubs';
 import actions from './actions';
 import routes from '../core/routes.jsx';
 
 export default {
   routes,
-  actions
+  actions,
+  load(context) {
+    methodStubs(context);
+  }
 };

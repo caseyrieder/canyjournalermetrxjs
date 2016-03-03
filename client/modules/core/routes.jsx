@@ -15,7 +15,7 @@ export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
   // Home (entries list)
   FlowRouter.route('/', {
-    name: 'items.list',
+    name: 'entries.list',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<EntryList />)

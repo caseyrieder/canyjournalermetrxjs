@@ -1,19 +1,17 @@
 import React from 'react';
-import { Grid, Row, Col, Panel } from 'react-bootstrap';
+import { Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 // Create entry-list component for all entries
 const EntryList = ({entries}) => (
-  <Grid>
-    <Row>
+  <Col xs={12} sm={6} smOffset={3}>
+    <ListGroup className='entrylist'>
       {entries.map(entry => (
-        <Col xs={3} key={entry._id}>
-          <Panel>
-            <p>{entry.title}</p>
-            <a href={`/entry/${entry._id}`}>View Entry</a>
-          </Panel>
-        </Col>
+        <ListGroupItem key={entry._id}>
+          <a href={`/entry/${entry._id}`}>{entry.title}</a>
+        </ListGroupItem>
       ))}
-    </Row>
-  </Grid>
+    </ListGroup>
+    <Button bsStyle="primary" className="text-center" href="/new-entry">New Inspection</Button>
+  </Col>
 );
 // Export entry-list component
 export default EntryList;

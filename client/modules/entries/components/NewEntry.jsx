@@ -10,7 +10,8 @@ class NewEntry extends React.Component {
           <h1>Add Entry</h1>
           {error ? <p style={{color: 'red'}}>{error}</p> : null}
           <form>
-            <Input ref="text" type="textarea" placeholder="Your entry..." />
+            <Input ref="title" type="text" placeholder="Entry title..." />
+            <Input ref="content" type="textarea" placeholder="Your entry..." />
             <ButtonInput onClick={this.newEntry.bind(this)} bsStyle="primary" type="submit" value="Add" />
           </form>
         </Panel>
@@ -21,10 +22,11 @@ class NewEntry extends React.Component {
   newEntry(e) {
     e.preventDefault();
     const {create} = this.props;
-    const {text} = this.refs;
-    create(text.getValue());
-    text.getInputDOMNode().value = '';
- }
+    const {title, content} = this.refs;
+    create(title.getValue(), content.getValue());
+    title.getInputDOMNode().value = '';
+    content.getInputDOMNode().value = '';
+  }
 }
 // Export snew-entry form component
 export default NewEntry;
