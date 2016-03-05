@@ -4,9 +4,7 @@ import Navigation from './Navigation.jsx';
 // Render main layout component w/react-bootstrap styles
 const Layout = ({content = () => null }) => (
   <div>
-    <header>
-      <Navigation />
-    </header>
+    <Navigation />
     <Grid>
       <Row>
       	<h1>My Inspections(for now)</h1>
