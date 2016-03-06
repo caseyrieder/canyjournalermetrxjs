@@ -10,6 +10,11 @@ import Login from '../users/containers/Login.js';
 import EntryList from '../entries/containers/EntryList.js';
 import Entry from '../entries/containers/Entry.js';
 import NewEntry from '../entries/containers/NewEntry.js';
+// Company containers for routing
+import CompanyList from '../companies/containers/CompanyList.js';
+import Company from '../companies/containers/Company.js';
+import NewCompany from '../companies/containers/NewCompany.js';
+
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
@@ -64,6 +69,33 @@ export default function (injectDeps, {FlowRouter}) {
     action() {
       Meteor.logout();
       FlowRouter.go('/');
+    }
+  });
+  // Companies list
+  FlowRouter.route('/companies', {
+    name: 'companies.list',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<CompanyList />)
+      });
+    }
+  });
+  // Single company
+  FlowRouter.route('/company/:companyId', {
+    name: 'companies.single',
+    action({companyId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<Company companyId={companyId} />)
+      });
+    }
+  });
+  // New company
+  FlowRouter.route('/new-company', {
+    name:'newCompany',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NewCompany />)
+      })
     }
   });
 }

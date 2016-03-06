@@ -34,7 +34,12 @@ const AppMenuBar = () => (
             href="/buildings"
           />
         </MenuItem>
-        <MenuItem value={3} primaryText="Contractors" />
+        <FlatButton
+          label="Buildings"
+          linkButton={true}
+          href="/buildings"
+        />
+        <LinkMenuItem index={3} text="Contractors" payload="/companies" />
         <MenuItem value={4} primaryText="Workers" />
         <Divider />
         <MenuItem value={5} primaryText="Reports" />
