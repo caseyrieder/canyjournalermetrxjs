@@ -1,11 +1,11 @@
 export default {
-  // Create new entry
+  // Create new company
   create({Meteor, LocalState, FlowRouter}, name, specialty) {
-    // Handle empty title or content field
+    // Handle empty name field
     if (!name) {
       return LocalState.set('CREATE_COMPANY_ERROR', 'Company name is required.');
     }
-    // Set error to null if text exists
+    // Set error to null if name exists
     LocalState.set('CREATE_COMPANY_ERROR', null);
     // Create uuid for latency compensation, via method in config/method_stubs
     const id = Meteor.uuid();

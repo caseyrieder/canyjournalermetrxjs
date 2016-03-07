@@ -1,50 +1,60 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 // Primary layouts for routing
-import Layout from './components/MainLayout.jsx';
-import Home from './components/Home.jsx';
+import Main from './layouts/Main.jsx';
+import Home from './layouts/Home.jsx';
 // User containers for routing
 import NewUser from '../users/containers/NewUser.js';
 import Login from '../users/containers/Login.js';
-// Entry containers for routing
-import EntryList from '../entries/containers/EntryList.js';
-import Entry from '../entries/containers/Entry.js';
-import NewEntry from '../entries/containers/NewEntry.js';
+// Worker containers for routing
+import WorkerList from '../workers/containers/WorkerList.js';
+import Worker from '../workers/containers/Worker.js';
+import NewWorker from '../workers/containers/NewWorker.js';
 // Company containers for routing
 import CompanyList from '../companies/containers/CompanyList.js';
 import Company from '../companies/containers/Company.js';
 import NewCompany from '../companies/containers/NewCompany.js';
-
+// Building containers for routing
+import BuildingList from '../buildings/containers/BuildingList.js';
+import Building from '../buildings/containers/Building.js';
+import NewBuilding from '../buildings/containers/NewBuilding.js';
+// Inspection containers for routing
+import InspectionList from '../inspections/containers/InspectionList.js';
+import Inspection from '../inspections/containers/Inspection.js';
+import NewInspection from '../inspections/containers/NewInspection.js';
 
 export default function (injectDeps, {FlowRouter}) {
-  const MainLayoutCtx = injectDeps(Layout);
-  // Home (entries list)
+  const MainLayoutCtx = injectDeps(Main);
+/* INSPECTIONS ROUTES */
+  // Home (inspections list)
   FlowRouter.route('/', {
-    name: 'entries.list',
+    name: 'inspections.list',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<EntryList />)
+        content: () => (<InspectionList />)
       });
     }
   });
-  // Single entry
-  FlowRouter.route('/entry/:entryId', {
-    name: 'entries.single',
-    action({entryId}) {
+  // Single inspection
+  FlowRouter.route('/inspection/:inspectionId', {
+    name: 'inspections.single',
+    action({inspectionId}) {
       mount(MainLayoutCtx, {
-        content: () => (<Entry entryId={entryId} />)
+        content: () => (<Inspection inspectionId={inspectionId} />)
       });
     }
   });
-  // New entry
-  FlowRouter.route('/new-entry', {
-    name:'newEntry',
+  // New inspection
+  FlowRouter.route('/new-inspection', {
+    name:'newInspection',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<NewEntry />)
+        content: () => (<NewInspection />)
       })
     }
   });
+
+/* USERS ROUTES */
   // User Register/SignUp
   FlowRouter.route('/register', {
     name: 'users.new',
@@ -71,6 +81,37 @@ export default function (injectDeps, {FlowRouter}) {
       FlowRouter.go('/');
     }
   });
+
+/* WORKERS ROUTES */
+  // Workers list
+  FlowRouter.route('/workers', {
+    name: 'workers.list',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<WorkerList />)
+      });
+    }
+  });
+  // Single worker
+  FlowRouter.route('/worker/:workerId', {
+    name: 'workers.single',
+    action({workerId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<Worker workerId={workerId} />)
+      });
+    }
+  });
+  // New worker
+  FlowRouter.route('/new-worker', {
+    name:'newWorker',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NewWorker />)
+      })
+    }
+  });
+
+/* COMPANIES ROUTES */
   // Companies list
   FlowRouter.route('/companies', {
     name: 'companies.list',
@@ -95,6 +136,35 @@ export default function (injectDeps, {FlowRouter}) {
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NewCompany />)
+      })
+    }
+  });
+
+/* BUILDINGS ROUTES */
+  // Buildings list
+  FlowRouter.route('/buildings', {
+    name: 'buildings.list',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<BuildingList />)
+      });
+    }
+  });
+  // Single building
+  FlowRouter.route('/building/:buildingId', {
+    name: 'buildings.single',
+    action({buildingId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<Building buildingId={buildingId} />)
+      });
+    }
+  });
+  // New building
+  FlowRouter.route('/new-building', {
+    name:'newBuilding',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<NewBuilding />)
       })
     }
   });

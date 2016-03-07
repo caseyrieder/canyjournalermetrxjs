@@ -1,7 +1,11 @@
-import entries from './entries';
+import workers from './workers';
 import companies from './companies';
+import buildings from './buildings';
+import inspections from './inspections';
 
 export default function() {
-  entries();
+  workers();
   companies();
+  buildings();
+  inspections();
 }
