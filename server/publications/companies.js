@@ -1,4 +1,4 @@
-import {Companies} from '/lib/collections';
+import {Companies, Workers} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 // Handle methods for publishing Companies collection
@@ -17,5 +17,11 @@ export default function () {
     check(companyId, String);
     const selector = {_id: companyId};
     return Companies.find(selector);
+  });
+  // Publish all workers for a single company
+  Meteor.publish('companies.workers', function(companyId) {
+    check(companyId, String);
+    const selector = {companyId};
+    return Workers.find(selector);
   });
 }

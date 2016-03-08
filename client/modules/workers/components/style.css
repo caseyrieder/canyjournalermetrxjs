@@ -1,56 +1,39 @@
-body {
-  font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
-  padding: 10px 20px;
-}
-
-header {
-  border-bottom: 1px solid #EAEAEA;
-  padding-bottom: 10px;
-  margin-bottom: 30px;
-}
-
-footer {
-  margin-top: 50px;
-  border-top: 1px solid #EAEAEA;
-  padding-top: 10px;
-  font-size: 12px;
-}
-
-.btn-ctr {
-  align-self: center;
-}
-
-.workerlist li {
-  margin: 8px 0;
-  font-size: 14px;
-}
-
-.workerlist li a {
-  text-decoration: none;
-}
-
-.new-worker input,
-.new-worker textarea {
-  width: 350px;
-  outline: 0;
-  margin-bottom: 5px;
-  border: 1px solid #ddd;
+.workers {
   font-size: 13px;
-  padding: 4px 6px;
 }
 
-.new-worker textarea {
-  height: 200px;
+.workers textarea {
+  width: 250px;
+  outline: 0;
+  border: 1px solid #ddd;
+  padding: 5px 5px;
 }
 
-footer {
-  margin-top: 20px;
-  border-top: 1px solid #eee;
-  padding-top: 5px;
+.workers .worker-list {
+  margin-top: 15px;
 }
 
-.worker-date {
-  text-align: right;
-  font-size: 10px;
-  font-style: italic;
+.workers .error {
+  color: red;
+  padding: 5px 0;
+}
+
+.employees {
+  font-size: 13px;
+}
+
+.employees textarea {
+  width: 250px;
+  outline: 0;
+  border: 1px solid #ddd;
+  padding: 5px 5px;
+}
+
+.employees .employee-list {
+  margin-top: 15px;
+}
+
+.employees .error {
+  color: red;
+  padding: 5px 0;
 }

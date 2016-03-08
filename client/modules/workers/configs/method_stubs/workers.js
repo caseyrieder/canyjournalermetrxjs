@@ -10,12 +10,28 @@ export default function ({Meteor, Collections}) {
       check(role, String);
       // Add date
       const createdAt = new Date();
-      // create newworker object
+      // Create newworker object
       const worker = {
         _id, name, role, createdAt,
         saving: true
       };
       // Insert new worker into collection
+      Collections.Workers.insert(worker);
+    }
+  });
+  // Run 'insert' with Predefined company
+  Meteor.methods({
+    'companies.addEmployee'(_id, companyId, name, role) {
+      check(_id, String);
+      check(companyId, String);
+      check(name, String);
+      check(role, String);
+
+      const createdAt = new Date();
+      const worker = {
+        _id, companyId, name, role, createdAt,
+        saving: true
+      };
       Collections.Workers.insert(worker);
     }
   });

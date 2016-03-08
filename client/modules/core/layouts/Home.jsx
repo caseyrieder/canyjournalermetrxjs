@@ -2,7 +2,7 @@ import React from 'react';
 // Render Home component
 const Home = ({content = () => null }) => (
   <div>
-  	<p>Welcome to Mantraplate</p>
+  	<p>Welcome to CANY</p>
   	{content()}
   </div>
 );

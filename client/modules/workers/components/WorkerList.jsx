@@ -1,17 +1,20 @@
 import React from 'react';
-import { Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import NewWorker from '../containers/NewWorker.js';
 // Create worker-list component for all workers
 const WorkerList = ({workers}) => (
-  <Col xs={12} sm={6} smOffset={3}>
-    <ListGroup className='workerlist'>
+  <div className="workers">
+    <div>
+      <NewWorker />
+    </div>
+    <div className="worker-list">
+      {workers.length === 0 ? <p>No workers yet!</p> : null}
       {workers.map(worker => (
-        <ListGroupItem key={worker._id}>
-          <a href={`/worker/${worker._id}`}>{worker.name}</a>
-        </ListGroupItem>
+        <div key={worker._id} className="worker">
+          <a href={`/worker/${worker._id}`}><b>{worker.name}</b></a>
+        </div>
       ))}
-    </ListGroup>
-    <Button bsStyle="primary" className="text-center" href="/new-worker">New Worker</Button>
-  </Col>
+    </div>
+  </div>
 );
 // Export worker-list component
 export default WorkerList;

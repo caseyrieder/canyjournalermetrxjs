@@ -8,7 +8,7 @@ export const composer = ({context}, onData) => {
     onData(null, {workers});
   }
 };
-// Komposer sends Workers collection data to WorkerList component
+// Komposer sends a specific company's Workers collection data to WorkerList component
 export default composeAll(
   composeWithTracker(composer),
   useDeps()

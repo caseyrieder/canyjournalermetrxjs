@@ -6,6 +6,8 @@ export const composer = ({context}, onData) => {
   if (Meteor.subscribe('companies.list').ready()) {
     const companies = Collections.Companies.find().fetch();
     onData(null, {companies});
+  } else {
+    onData();
   }
 };
 // Komposer sends Companies collection data to CompanyList component

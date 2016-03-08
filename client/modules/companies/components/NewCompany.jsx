@@ -1,21 +1,18 @@
 import React from 'react';
-import { Col, Panel, Input, ButtonInput, Glyphicon } from 'react-bootstrap';
 // Render new-company form & handle error & newCompany btn
 class NewCompany extends React.Component {
   render() {
     const {error} = this.props;
     return (
-      <Col xs={12} sm={6} smOffset={3}>
-        <Panel>
-          <h1>Add Company</h1>
-          {error ? <p style={{color: 'red'}}>{error}</p> : null}
-          <form>
-            <Input ref="name" type="text" placeholder="Company name..." />
-            <Input ref="specialty" type="textarea" placeholder="specialty..." />
-            <ButtonInput onClick={this.newCompany.bind(this)} bsStyle="primary" type="submit" value="Add" />
-          </form>
-        </Panel>
-      </Col>
+      <div>
+        <h1>Add Company</h1>
+        {error ? <p style={{color: 'red'}}>{error}</p> : null}
+        <form>
+          <input ref="name" type="text" placeholder="Company name..." />
+          <input ref="specialty" type="textarea" placeholder="specialty..." />
+          <button onClick={this.newCompany.bind(this)} type="submit">Add</button>
+        </form>
+      </div>
     )
   }
 
