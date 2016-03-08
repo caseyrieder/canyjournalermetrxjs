@@ -8,21 +8,21 @@ class NewCompany extends React.Component {
         <h1>Add Company</h1>
         {error ? <p style={{color: 'red'}}>{error}</p> : null}
         <form>
-          <input ref="name" type="text" placeholder="Company name..." />
-          <input ref="specialty" type="textarea" placeholder="specialty..." />
-          <button onClick={this.newCompany.bind(this)} type="submit">Add</button>
+          <input ref='name' type='text' placeholder='Company name...' />
+          <input ref='specialty' type='text' placeholder='specialty...' />
+          <button onClick={this.newCompany.bind(this)} type='submit'>Add</button>
         </form>
       </div>
-    )
+    );
   }
 
   newCompany(e) {
     e.preventDefault();
     const {create} = this.props;
     const {name, specialty} = this.refs;
-    create(name.getValue(), specialty.getValue());
-    name.getInputDOMNode().value = '';
-    specialty.getInputDOMNode().value = '';
+    create(name.value, specialty.value);
+    name.value = '';
+    specialty.value = '';
   }
 }
 // Export new-company form component

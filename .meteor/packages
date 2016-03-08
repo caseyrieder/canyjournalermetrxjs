@@ -22,6 +22,5 @@ audit-argument-checks
 check
 random
 accounts-password
-momentjs:moment
 
 twbs:bootstrap

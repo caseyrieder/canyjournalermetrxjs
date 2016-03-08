@@ -2,9 +2,9 @@ import {Buildings} from '/lib/collections';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 // Handle methods for manipulating Buildings collection
-export default function() {
+export default function () {
   Meteor.methods({
-    //Check args, add date, insert into collection
+    // Check args, add date, insert into collection
     'buildings.create'(_id, address, projectCode) {
       check(_id, String);
       check(address, String);

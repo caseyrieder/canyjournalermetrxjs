@@ -1,13 +1,13 @@
 import React from 'react';
-import AppMenuBar from './AppMenuBar.jsx';
-// Render main layout component w/react-bootstrap styles
+import Navigation from './Navigation.jsx';
+// Render main layout component
 const Main = ({content = () => null }) => (
   <div>
-    <AppMenuBar />
+    <Navigation />
     <div>
       {content()}
     </div>
   </div>
 );
-// Export bootstrapped component
+// Export component
 export default Main;

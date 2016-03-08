@@ -10,7 +10,7 @@ export const composer = ({context, clearErrors}, onData) => {
 };
 // Map action dependencies into context
 export const depsMapper = (context, actions) => ({
-  create: actions.workers.addEmployee,
+  create: actions.companies.addEmployee,
   clearErrors: actions.workers.clearErrors,
   context: () => context
 });

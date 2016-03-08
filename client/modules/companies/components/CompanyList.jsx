@@ -1,17 +1,16 @@
 import React from 'react';
-import { Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
 // Create company-list component for all companies
 const CompanyList = ({companies}) => (
-  <Col xs={12} sm={6} smOffset={3}>
-    <ListGroup className='companylist'>
+  <div>
+    <ul className='companylist'>
       {companies.map(company => (
-        <ListGroupItem key={company._id}>
+        <li key={company._id}>
           <a href={`/company/${company._id}`}>{company.name}</a>
-        </ListGroupItem>
+        </li>
       ))}
-    </ListGroup>
-    <Button bsStyle="primary" className="text-center" href="/new-company">New Company</Button>
-  </Col>
+    </ul>
+    <button className='text-center' href='/new-company'>New Company</button>
+  </div>
 );
 // Export company-list component
 export default CompanyList;

@@ -18,19 +18,6 @@ export default {
     // Reroute to workers list
     FlowRouter.go('/workers');
   },
-  // Create new worker with associated company
-  addEmployee({Meteor, LocalState, FlowRouter}, companyId, name, role) {
-    if (!companyId || !name) {
-      return LocalState.set('CREATE_WORKER_ERROR', 'Name & company both required');
-    }
-    LocalState.set('CREATE_WORKER_ERROR', null);
-    const id = Meteor.uuid();
-    Meteor.call('companies.addEmployee', id, companyId, name, role, (err) => {
-      if (err) {
-        return LocalState.set('CREATE_WORKER_ERROR', err.message);
-      }
-    });
-  },
   // Clear errors in LocalState
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null);

@@ -3,7 +3,7 @@ import companies from './companies';
 import buildings from './buildings';
 import inspections from './inspections';
 
-export default function() {
+export default function () {
   workers();
   companies();
   buildings();

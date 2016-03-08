@@ -1,15 +1,15 @@
 import React from 'react';
 // Create employee-list component for all workers of a given company
-const EmployeeList = ({workers, companyId}) => (
-  <div className="employees">
-    <div className="employee-list">
+const EmployeeList = ({workers}) => (
+  <div className='employees'>
+    <ul className='employee-list'>
       {workers.length === 0 ? <p>No employees yet!</p> : null}
       {workers.map(worker => (
-        <div key={worker._id} className="worker">
+        <li key={worker._id} className='employee'>
           <a href={`/worker/${worker._id}`}><b>{worker.name}</b></a>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 );
 // Export employee-list component

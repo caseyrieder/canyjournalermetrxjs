@@ -9,10 +9,10 @@ class NewWorker extends React.Component {
         <form>
           <input ref='name' type='text' placeholder='Worker name...' />
           <input ref='role' type='text' placeholder='role...' />
-          <button onClick={this.newWorker.bind(this)} type="submit">Add Worker</button>
+          <button onClick={this.newWorker.bind(this)} type='submit'>Add Worker</button>
         </form>
       </div>
-    )
+    );
   }
 
   newWorker(e) {

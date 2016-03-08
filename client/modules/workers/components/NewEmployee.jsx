@@ -10,7 +10,7 @@ class NewEmployee extends React.Component {
           <input ref='companyId' type='hidden' value={this.props.companyId} />
           <input ref='name' type='text' placeholder='Worker name...' />
           <input ref='role' type='text' placeholder='role...' />
-          <button onClick={this.addEmployee.bind(this)} type="submit">Add Employee</button>
+          <button onClick={this.addEmployee.bind(this)} type='submit'>Add Employee</button>
         </form>
       </div>
     );

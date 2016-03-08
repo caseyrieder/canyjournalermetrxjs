@@ -1,17 +1,15 @@
 import React from 'react';
-import { Grid, Row, Col } from 'react-bootstrap';
+import moment from 'moment';
 // Create single-inspection component for each {inspection} object
 const Inspection = ({inspection}) => (
-  <Grid>
-    <Row>
-      {inspection.saving ? <p>Saving...</p> : null}
-      <Col xs={6} xsOffset={3} className='text-center'>
-        <h2>{inspection.title}</h2>
-        <p>{inspection.content}</p>
-        <p className='inspection-date'>{moment(inspection.createdAt).format("MMM D, h:m")}</p>
-      </Col>
-    </Row>
-  </Grid>
+  <div>
+    {inspection.saving ? <p>Saving...</p> : null}
+    <div className='text-center'>
+      <h2>{inspection.title}</h2>
+      <p>{inspection.content}</p>
+      <p className='inspection-date'>{moment(inspection.createdAt).format('MMM D, h:m')}</p>
+    </div>
+  </div>
 );
 // Export single-inspection component
 export default Inspection;

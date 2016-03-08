@@ -4,7 +4,7 @@ import {check} from 'meteor/check';
 // Handle methods for publishing Companies collection
 export default function () {
   // Publish all companies w/unspecified selector, sort revChronol
-  Meteor.publish('companies.list', function() {
+  Meteor.publish('companies.list', function () {
     const selector = {};
     const options = {
       fields: {_id: 1, name: 1, specialty: 1},
@@ -13,13 +13,13 @@ export default function () {
     return Companies.find(selector, options);
   });
   // Publish single company from companyId
-  Meteor.publish('companies.single', function(companyId) {
+  Meteor.publish('companies.single', function (companyId) {
     check(companyId, String);
     const selector = {_id: companyId};
     return Companies.find(selector);
   });
   // Publish all workers for a single company
-  Meteor.publish('companies.workers', function(companyId) {
+  Meteor.publish('companies.workers', function (companyId) {
     check(companyId, String);
     const selector = {companyId};
     return Workers.find(selector);

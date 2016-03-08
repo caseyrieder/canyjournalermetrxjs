@@ -1,5 +1,6 @@
 import React from 'react';
 import {mount} from 'react-mounter';
+import {Meteor} from 'meteor/meteor';
 // Primary layouts for routing
 import Main from './layouts/Main.jsx';
 import Home from './layouts/Home.jsx';
@@ -25,6 +26,15 @@ import NewInspection from '../inspections/containers/NewInspection.js';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Main);
+/* HOME */
+  FlowRouter.route('/home', {
+    name: 'home',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<Home />)
+      });
+    }
+  });
 /* INSPECTIONS ROUTES */
   // Home (inspections list)
   FlowRouter.route('/', {
@@ -46,11 +56,11 @@ export default function (injectDeps, {FlowRouter}) {
   });
   // New inspection
   FlowRouter.route('/new-inspection', {
-    name:'newInspection',
+    name: 'newInspection',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NewInspection />)
-      })
+      });
     }
   });
 
@@ -103,11 +113,11 @@ export default function (injectDeps, {FlowRouter}) {
   });
   // New worker
   FlowRouter.route('/new-worker', {
-    name:'newWorker',
+    name: 'newWorker',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NewWorker />)
-      })
+      });
     }
   });
 
@@ -132,11 +142,11 @@ export default function (injectDeps, {FlowRouter}) {
   });
   // New company
   FlowRouter.route('/new-company', {
-    name:'newCompany',
+    name: 'newCompany',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NewCompany />)
-      })
+      });
     }
   });
 
@@ -161,11 +171,11 @@ export default function (injectDeps, {FlowRouter}) {
   });
   // New building
   FlowRouter.route('/new-building', {
-    name:'newBuilding',
+    name: 'newBuilding',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<NewBuilding />)
-      })
+      });
     }
   });
 }

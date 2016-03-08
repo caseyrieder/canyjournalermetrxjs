@@ -19,20 +19,4 @@ export default function ({Meteor, Collections}) {
       Collections.Workers.insert(worker);
     }
   });
-  // Run 'insert' with Predefined company
-  Meteor.methods({
-    'companies.addEmployee'(_id, companyId, name, role) {
-      check(_id, String);
-      check(companyId, String);
-      check(name, String);
-      check(role, String);
-
-      const createdAt = new Date();
-      const worker = {
-        _id, companyId, name, role, createdAt,
-        saving: true
-      };
-      Collections.Workers.insert(worker);
-    }
-  });
 }
