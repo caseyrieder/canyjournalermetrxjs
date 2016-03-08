@@ -15,7 +15,6 @@ describe('core.layouts.Main', () => {
     const el = shallow(
       <Main content={() => (<Comp />)}/>
     );
-
     expect(el.contains(<Comp />)).to.be.equal(true);
   });
 });
