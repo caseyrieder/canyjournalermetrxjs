@@ -1,14 +1,11 @@
 import React from 'react';
 // Render Home component
-// const Home = ({content = () => null }) => (
 const Home = () => (
   <div>
-    <p>Welcome to CANY</p>
-    <div>
-      <p>If you are a new user, please <a href='/register'>register</a> here</p>
-    </div>
-    <div>
-      <p>If you are an existing user, please <a href='/login'>login</a> here</p>
+    <h1>Welcome to CANY</h1>
+    <div className='home-links'>
+      <h3>If you are a new user, please <a href='/register'>register</a> here</h3>
+      <h3>If you are an existing user, please <a href='/login'>login</a> here</h3>
     </div>
   </div>
 );

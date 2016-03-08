@@ -1,21 +1,28 @@
-// const {describe, it} = global;
-// import {expect} from 'chai';
-// import {shallow} from 'enzyme';
-// import MainLayout from '../main_layout.jsx';
-// import Navigation from '../navigation.jsx';
-//
-// describe('core.components.main_layout', () => {
-//   it('should contain navigation', () => {
-//     const el = shallow(<MainLayout />);
-//     expect(el.contains(<Navigation />)).to.be.equal(true);
-//   });
-//
-//   it('should render childrens', () => {
-//     const Comp = () => (<p>Hello</p>);
-//     const el = shallow(
-//       <MainLayout content={() => (<Comp />)}/>
-//     );
-//
-//     expect(el.contains(<Comp />)).to.be.equal(true);
-//   });
-// });
+const {describe, it} = global;
+import {expect} from 'chai';
+import {shallow} from 'enzyme';
+import Home from '../Home.jsx';
+
+describe('core.layouts.Home', () => {
+  it('should contain welcome text in h1', () => {
+    const el = shallow(<Home />);
+    const hdr = el.find('h1');
+    expect(hdr.text()).to.include('Welcome');
+  });
+
+  it('should render first h3 with register link', () => {
+    const el = shallow(<Home />);
+    const first = el.find('h3').at(0);
+    const regLink = first.find('a');
+    expect(regLink.text()).to.be.equal('register');
+    expect(regLink.prop('href')).to.be.equal('/register');
+  });
+
+  it('should render second h3 with login link', () => {
+    const el = shallow(<Home />);
+    const second = el.find('h3').at(1);
+    const lgnLink = second.find('a');
+    expect(lgnLink.text()).to.be.equal('login');
+    expect(lgnLink.prop('href')).to.be.equal('/login');
+  });
+});
