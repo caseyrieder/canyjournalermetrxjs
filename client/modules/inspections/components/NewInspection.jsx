@@ -5,7 +5,6 @@ class NewInspection extends React.Component {
     const {error} = this.props;
     return (
       <div>
-        <h1>Add Inspection</h1>
         {error ? <p style={{color: 'red'}}>{error}</p> : null}
         <form>
           <input ref='title' type='text' placeholder='Inspection title...' />

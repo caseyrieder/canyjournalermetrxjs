@@ -1,17 +1,18 @@
 import React from 'react';
-import { Col, ListGroup, ListGroupItem, Button } from 'react-bootstrap';
+import NewInspection from '../containers/NewInspection.js';
 // Create inspection-list component for all inspections
 const InspectionList = ({inspections}) => (
-  <Col xs={12} sm={6} smOffset={3}>
-    <ListGroup className='inspectionlist'>
+  <div>
+    <NewInspection />
+    <ul className='inspectionlist'>
+      {inspections.length === 0 ? <p>No inspections yet!</p> : null}
       {inspections.map(inspection => (
-        <ListGroupItem key={inspection._id}>
-          <a href={`/inspection/${inspection._id}`}>{inspection.title}</a>
-        </ListGroupItem>
+        <li key={inspection._id} className='inspection'>
+          <a href={`/inspection/${inspection._id}`}><b>{inspection.title}</b></a>
+        </li>
       ))}
-    </ListGroup>
-    <Button bsStyle="primary" className="text-center" href="/new-inspection">New Inspection</Button>
-  </Col>
+    </ul>
+  </div>
 );
 // Export inspection-list component
 export default InspectionList;

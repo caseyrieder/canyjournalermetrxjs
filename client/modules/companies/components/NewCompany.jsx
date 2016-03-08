@@ -5,7 +5,6 @@ class NewCompany extends React.Component {
     const {error} = this.props;
     return (
       <div>
-        <h1>Add Company</h1>
         {error ? <p style={{color: 'red'}}>{error}</p> : null}
         <form>
           <input ref='name' type='text' placeholder='Company name...' />

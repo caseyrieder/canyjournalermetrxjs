@@ -1,15 +1,17 @@
 import React from 'react';
+import NewBuilding from '../containers/NewBuilding.js';
 // Create building-list component for all buildings
 const BuildingList = ({buildings}) => (
   <div>
+    <NewBuilding />
     <ul className='buildinglist'>
+      {buildings.length === 0 ? <p>No buildings yet!</p> : null}
       {buildings.map(building => (
-        <li key={building._id}>
-          <a href={`/building/${building._id}`}>{building.address}</a>
+        <li key={building._id} className='building'>
+          <a href={`/building/${building._id}`}><b>{building.address}</b></a>
         </li>
       ))}
     </ul>
-    <button className="text-center" href="/new-building">New Building</button>
   </div>
 );
 // Export building-list component

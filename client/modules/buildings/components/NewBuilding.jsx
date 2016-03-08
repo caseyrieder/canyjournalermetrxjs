@@ -5,12 +5,11 @@ class NewBuilding extends React.Component {
     const {error} = this.props;
     return (
       <div>
-        <h1>Add Building</h1>
         {error ? <p style={{color: 'red'}}>{error}</p> : null}
         <form>
-          <input ref="address" type="text" placeholder="Building address..." />
-          <input ref="projectCode" type="textarea" placeholder="projectCode..." />
-          <button onClick={this.newBuilding.bind(this)} type="submit">Add Building</button>
+          <input ref='address' type='text' placeholder='Building address...' />
+          <input ref='projectCode' type='text' placeholder='projectCode...' />
+          <button onClick={this.newBuilding.bind(this)} type='submit'>Add Building</button>
         </form>
       </div>
     );
