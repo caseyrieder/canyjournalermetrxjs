@@ -10,17 +10,17 @@ class Login extends React.Component {
         <form>
           <input ref='email' type='email' placeholder='Email'/>
           <input ref='password' type='password' placeholder='Password'/>
-          <button onClick={this.login.bind(this)} type='submit'>Login</button>
+          <button onClick={this.signIn.bind(this)} type='submit'>Login</button>
         </form>
       </div>
     );
   }
 
-  login(e) {
+  signIn(e) {
     e.preventDefault();
-    const {loginUser} = this.props;
+    const {login} = this.props;
     const {email, password} = this.refs;
-    loginUser(email.value, password.value);
+    login(email.value, password.value);
     email.value = '';
     password.value = '';
   }

@@ -2,11 +2,16 @@ import React from 'react';
 import {mount} from 'react-mounter';
 import {Meteor} from 'meteor/meteor';
 
-/* CORE COMPONENTS & USER CONTAINERS */
+/* CORE COMPONENTS */
 import Main from './layouts/Main.jsx';
 import Home from './layouts/Home.jsx';
-import NewUser from '../users/containers/NewUser.js';
+
+/* USER CONTAINERS */
+import Register from '../users/containers/Register.js';
 import Login from '../users/containers/Login.js';
+// import Confirm from '../users/containers/Confirm.js';
+// import Account from '../users/containers/Account.js';
+// import PasswordReset from '../users/containers/PasswordReset.js';
 
 /* LIST COMPONENTS */
 import Workers from '../workers/components/Workers.jsx';
@@ -38,10 +43,10 @@ export default function (injectDeps, {FlowRouter}) {
 ------------------------------------------------- */
   // User Register/SignUp
   FlowRouter.route('/register', {
-    name: 'users.new',
+    name: 'users.register',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<NewUser />)
+        content: () => (<Register />)
       });
     }
   });
@@ -54,6 +59,33 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
+  // // User Confirm
+  // FlowRouter.route('/confirm/:userId', {
+  //   name: 'users.confirm',
+  //   action({userId}) {
+  //     mount(MainLayoutCtx, {
+  //       content: () => (<Confirm />)
+  //     });
+  //   }
+  // });
+  // // User Account View & Edit
+  // FlowRouter.route('/account/:userId', {
+  //   name: 'users.account',
+  //   action({userId}) {
+  //     mount(MainLayoutCtx, {
+  //       content: () => (<Account />)
+  //     })
+  //   }
+  // });
+  // // User Password Reset
+  // FlowRouter.route('/passreset/:userId', {
+  //   name: 'users.passreset',
+  //   action({userId}) {
+  //     mount(MainLayoutCtx, {
+  //       content: () => (<PasswordReset />)
+  //     })
+  //   }
+  // });
   // User Logout
   FlowRouter.route('/logout', {
     name: 'users.logout',

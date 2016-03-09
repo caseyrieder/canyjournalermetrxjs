@@ -11,7 +11,7 @@ export default {
     }
     // Set error to null if email & password exist
     LocalState.set('CREATE_USER_ERROR', null);
-    // Call createUser method on Accounts & route to home
+    // Call createUser method on Accounts, then create this user in Workers, then route to home
     Accounts.createUser({email, password});
     FlowRouter.go('/main');
   },

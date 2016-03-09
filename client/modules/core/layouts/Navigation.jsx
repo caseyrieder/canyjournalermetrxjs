@@ -25,7 +25,7 @@ const Navigation = () => (
         <MenuItem index={3} primaryText="Companies" href="/companies" />
         <MenuItem index={4} primaryText="Workers" href="/workers" />
         <Divider />
-        <MenuItem index={5} primaryText="Reports" />
+        <MenuItem index={5} primaryText="Reports" href="#" />
       </IconMenu>
     </ToolbarGroup>
     <ToolbarGroup float="right">
