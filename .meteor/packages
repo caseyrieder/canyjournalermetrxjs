@@ -24,5 +24,5 @@ random
 accounts-password
 msavin:mongol
 mdg:geolocation
-aldeed:autoform
 mdg:camera
+aldeed:simple-schema
