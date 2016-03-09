@@ -1,9 +1,7 @@
 import React from 'react';
-import NewWorker from '../containers/NewWorker.js';
 // Create worker-list component for all workers
 const WorkerList = ({workers}) => (
   <div>
-    <NewWorker />
     <ul className='workerlist'>
       {workers.length === 0 ? <p>No workers yet!</p> : null}
       {workers.map(worker => (

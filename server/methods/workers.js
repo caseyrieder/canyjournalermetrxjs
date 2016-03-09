@@ -5,12 +5,13 @@ import {check} from 'meteor/check';
 export default function () {
   Meteor.methods({
     // Check args, add date, insert into collection
-    'workers.create'(_id, name, role) {
+    'workers.create'(_id, companyId, name, role) {
       check(_id, String);
+      check(companyId, String);
       check(name, String);
       check(role, String);
       const createdAt = new Date();
-      const worker = {_id, name, role, createdAt};
+      const worker = {_id, companyId, name, role, createdAt};
       Workers.insert(worker);
     }
   });

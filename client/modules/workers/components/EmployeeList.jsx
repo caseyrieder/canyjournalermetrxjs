@@ -2,7 +2,7 @@ import React from 'react';
 // Create employee-list component for all workers of a given company
 const EmployeeList = ({workers}) => (
   <div>
-    <ul className='employee-list'>
+    <ul className='employeelist'>
       {workers.length === 0 ? <p>No employees yet!</p> : null}
       {workers.map(worker => (
         <li key={worker._id} className='employee'>

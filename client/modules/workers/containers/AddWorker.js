@@ -1,4 +1,4 @@
-import NewEmployee from '../components/NewEmployee.jsx';
+import AddWorker from '../components/AddWorker.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 // Set state, gather error, if we get get-nullify error
 export const composer = ({context, clearErrors}, onData) => {
@@ -10,12 +10,12 @@ export const composer = ({context, clearErrors}, onData) => {
 };
 // Map action dependencies into context
 export const depsMapper = (context, actions) => ({
-  create: actions.companies.addEmployee,
+  create: actions.workers.create,
   clearErrors: actions.workers.clearErrors,
   context: () => context
 });
-// Komposer sets context/errors & actions onto NewEmployee component
+// Komposer sets context/errors & actions onto AddPerson component
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(NewEmployee);
+)(AddWorker);

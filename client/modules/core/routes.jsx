@@ -8,9 +8,9 @@ import Home from './layouts/Home.jsx';
 import NewUser from '../users/containers/NewUser.js';
 import Login from '../users/containers/Login.js';
 // Worker containers for routing
+import Workers from '../workers/components/Workers.jsx';
 import WorkerList from '../workers/containers/WorkerList.js';
 import Worker from '../workers/containers/Worker.js';
-import NewWorker from '../workers/containers/NewWorker.js';
 // Company containers for routing
 import CompanyList from '../companies/containers/CompanyList.js';
 import Company from '../companies/containers/Company.js';
@@ -98,7 +98,7 @@ export default function (injectDeps, {FlowRouter}) {
     name: 'workers.list',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<WorkerList />)
+        content: () => (<Workers />)
       });
     }
   });
