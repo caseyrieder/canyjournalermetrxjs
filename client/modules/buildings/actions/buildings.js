@@ -15,8 +15,6 @@ export default {
         return LocalState.set('CREATE_BUILDING_ERROR', err.message);
       }
     });
-    // Reroute to buildings list
-    FlowRouter.go('/buildings');
   },
   // Clear errors in LocalState
   clearErrors({LocalState}) {

@@ -7,9 +7,10 @@ class NewInspection extends React.Component {
       <div>
         {error ? <p style={{color: 'red'}}>{error}</p> : null}
         <form>
+          <input ref='buildingId' type='hidden' value={this.props.buildingId} />
           <input ref='title' type='text' placeholder='Inspection title...' />
           <input ref='content' type='textarea' placeholder='Your inspection...' />
-          <button onClick={this.newInspection.bind(this)} type='submit'>Add Inspection</button>
+          <button onClick={this.newInspection.bind(this)} type='submit'>Add</button>
         </form>
       </div>
     );
@@ -18,8 +19,8 @@ class NewInspection extends React.Component {
   newInspection(e) {
     e.preventDefault();
     const {create} = this.props;
-    const {title, content} = this.refs;
-    create(title.value, content.value);
+    const {buildingId, title, content} = this.refs;
+    create(buildingId.value, title.value, content.value);
     title.value = '';
     content.value = '';
   }

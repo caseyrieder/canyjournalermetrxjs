@@ -1,6 +1,6 @@
 export default {
   // Create new inspection
-  create({Meteor, LocalState, FlowRouter}, title, content) {
+  create({Meteor, LocalState, FlowRouter}, buildingId, title, content) {
     // Handle empty title or content field
     if (!title || !content) {
       return LocalState.set('CREATE_INSPECTION_ERROR', 'Title & content are both required.');
@@ -10,13 +10,11 @@ export default {
     // Create uuid for latency compensation, via method in config/method_stubs
     const id = Meteor.uuid();
     // Call create method on inspections collection & handle error
-    Meteor.call('inspections.create', id, title, content, (err) => {
+    Meteor.call('inspections.create', id, buildingId, title, content, (err) => {
       if (err) {
         return LocalState.set('CREATE_INSPECTION_ERROR', err.message);
       }
     });
-    // Reroute to inspections list
-    FlowRouter.go('/');
   },
   // Clear errors in LocalState
   clearErrors({LocalState}) {

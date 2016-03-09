@@ -1,6 +1,6 @@
 import React from 'react';
-import EmployeeList from '../../workers/containers/EmployeeList.js';
-import AddWorker from '../../workers/containers/AddWorker.js';
+import WorkerList from '../../workers/containers/WorkerList.js';
+import NewWorker from '../../workers/containers/NewWorker.js';
 // Create single-company component for each {company} object
 const Company = ({company}) => (
   <div className='text-center'>
@@ -9,8 +9,8 @@ const Company = ({company}) => (
     <p>{company.specialty}</p>
     <div>
       <h3>Workers</h3>
-      <AddWorker companyId={company._id} />
-      <EmployeeList companyId={company._id} />
+      <NewWorker companyId={company._id} />
+      <WorkerList companyId={company._id} />
     </div>
   </div>
 );

@@ -4,7 +4,7 @@ import {check} from 'meteor/check';
 // Handle methods for publishing Buildings collection
 export default function () {
   // Publish all buildings w/unspecified selector, sort revChronol
-  Meteor.publish('buildings.list', function () {
+  Meteor.publish('buildings.all', function () {
     const selector = {};
     const options = {
       fields: {_id: 1, address: 1, projectCode: 1},

@@ -13,7 +13,7 @@ export default {
     LocalState.set('CREATE_USER_ERROR', null);
     // Call createUser method on Accounts & route to home
     Accounts.createUser({email, password});
-    FlowRouter.go('/');
+    FlowRouter.go('/main');
   },
   // Login for existing user
   login({Meteor, LocalState, FlowRouter}, email, password) {
@@ -29,7 +29,7 @@ export default {
     LocalState.set('LOGIN_ERROR', null);
     // Call loginWithPassword & route to home
     Meteor.loginWithPassword(email, password);
-    FlowRouter.go('/');
+    FlowRouter.go('/main');
   },
   // Clear errors in LocalState
   clearErrors({LocalState}) {

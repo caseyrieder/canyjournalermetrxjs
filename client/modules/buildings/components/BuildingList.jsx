@@ -1,9 +1,7 @@
 import React from 'react';
-import NewBuilding from '../containers/NewBuilding.js';
 // Create building-list component for all buildings
 const BuildingList = ({buildings}) => (
   <div>
-    <NewBuilding />
     <ul className='buildinglist'>
       {buildings.length === 0 ? <p>No buildings yet!</p> : null}
       {buildings.map(building => (

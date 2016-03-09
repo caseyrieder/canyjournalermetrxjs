@@ -20,16 +20,16 @@ const Navigation = () => (
           </IconButton>
         }
       >
-        <MenuItem index={1} primaryText="Inspections" href="/" />
+        <MenuItem index={1} primaryText="Inspections" href="/inspections" />
         <MenuItem index={2} primaryText="Buildings" href="/buildings" />
-        <MenuItem index={3} primaryText="Contractors" href="/companies" />
+        <MenuItem index={3} primaryText="Companies" href="/companies" />
         <MenuItem index={4} primaryText="Workers" href="/workers" />
         <Divider />
         <MenuItem index={5} primaryText="Reports" />
       </IconMenu>
     </ToolbarGroup>
     <ToolbarGroup float="right">
-      <ToolbarTitle text="CANY" />
+      <ToolbarTitle text='CANY' />
       <IconMenu
         iconButtonElement={
           <IconButton touch={true}>
@@ -37,8 +37,8 @@ const Navigation = () => (
           </IconButton>
         }
       >
-        <MenuItem index={6} primaryText="Settings" />
-        <MenuItem index={7} primaryText="Login/Logout" />
+        <MenuItem index={6} primaryText='Settings' />
+        <MenuItem index={7} primaryText="Logout" href='/logout' />
       </IconMenu>
     </ToolbarGroup>
   </Toolbar>

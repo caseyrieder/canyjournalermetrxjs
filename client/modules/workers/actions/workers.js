@@ -16,4 +16,8 @@ export default {
       }
     });
   },
+  // Clear errors in LocalState
+  clearErrors({LocalState}) {
+    return LocalState.set('SAVING_ERROR', null);
+  }
 };

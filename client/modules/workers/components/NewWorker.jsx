@@ -1,6 +1,6 @@
 import React from 'react';
 // Render new-employee form & handle error & newEmployee btn
-class AddWorker extends React.Component {
+class NewWorker extends React.Component {
   render() {
     const {error} = this.props;
     return (
@@ -10,7 +10,7 @@ class AddWorker extends React.Component {
           <input ref='companyId' type='hidden' value={this.props.companyId} />
           <input ref='name' type='text' placeholder='Worker name...' />
           <input ref='role' type='text' placeholder='role...' />
-          <button onClick={this.newWorker.bind(this)} type='submit'>Add Employee</button>
+          <button onClick={this.newWorker.bind(this)} type='submit'>Add</button>
         </form>
       </div>
     );
@@ -26,4 +26,4 @@ class AddWorker extends React.Component {
   }
 }
 // Export new-worker form component
-export default AddWorker;
+export default NewWorker;

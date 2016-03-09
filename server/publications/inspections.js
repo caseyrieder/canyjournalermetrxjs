@@ -4,7 +4,7 @@ import {check} from 'meteor/check';
 // Handle methods for publishing Inspections collection
 export default function () {
   // Publish all inspections w/unspecified selector, sort revChronol
-  Meteor.publish('inspections.list', function () {
+  Meteor.publish('inspections.all', function () {
     const selector = {};
     const options = {
       fields: {_id: 1, title: 1, content: 1},
@@ -16,6 +16,12 @@ export default function () {
   Meteor.publish('inspections.single', function (inspectionId) {
     check(inspectionId, String);
     const selector = {_id: inspectionId};
+    return Inspections.find(selector);
+  });
+  // Publish all workers for a single company
+  Meteor.publish('inspections.building', function (buildingId) {
+    check(buildingId, String);
+    const selector = {buildingId};
     return Inspections.find(selector);
   });
 }

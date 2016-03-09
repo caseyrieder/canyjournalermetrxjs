@@ -1,4 +1,4 @@
-import AddWorker from '../components/AddWorker.jsx';
+import NewWorker from '../components/NewWorker.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 // Set state, gather error, if we get get-nullify error
 export const composer = ({context, clearErrors}, onData) => {
@@ -18,4 +18,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(AddWorker);
+)(NewWorker);

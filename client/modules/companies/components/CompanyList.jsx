@@ -1,9 +1,7 @@
 import React from 'react';
-import NewCompany from '../containers/NewCompany.js';
 // Create company-list component for all companies
 const CompanyList = ({companies}) => (
   <div>
-    <NewCompany />
     <ul className='companylist'>
       {companies.length === 0 ? <p>No companies yet!</p> : null}
       {companies.map(company => (

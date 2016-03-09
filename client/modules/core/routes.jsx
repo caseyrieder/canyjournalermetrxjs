@@ -1,33 +1,30 @@
 import React from 'react';
 import {mount} from 'react-mounter';
 import {Meteor} from 'meteor/meteor';
-// Primary layouts for routing
+
+/* CORE COMPONENTS & USER CONTAINERS */
 import Main from './layouts/Main.jsx';
 import Home from './layouts/Home.jsx';
-// User containers for routing
 import NewUser from '../users/containers/NewUser.js';
 import Login from '../users/containers/Login.js';
-// Worker containers for routing
+
+/* LIST COMPONENTS */
 import Workers from '../workers/components/Workers.jsx';
-import WorkerList from '../workers/containers/WorkerList.js';
+import Companies from '../companies/components/Companies.jsx';
+import Buildings from '../buildings/components/Buildings.jsx';
+import Inspections from '../inspections/components/Inspections.jsx';
+
+/* DETAIL CONTAINERS */
 import Worker from '../workers/containers/Worker.js';
-// Company containers for routing
-import CompanyList from '../companies/containers/CompanyList.js';
 import Company from '../companies/containers/Company.js';
-import NewCompany from '../companies/containers/NewCompany.js';
-// Building containers for routing
-import BuildingList from '../buildings/containers/BuildingList.js';
 import Building from '../buildings/containers/Building.js';
-import NewBuilding from '../buildings/containers/NewBuilding.js';
-// Inspection containers for routing
-import InspectionList from '../inspections/containers/InspectionList.js';
 import Inspection from '../inspections/containers/Inspection.js';
-import NewInspection from '../inspections/containers/NewInspection.js';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Main);
+
 /* HOME */
-  FlowRouter.route('/home', {
+  FlowRouter.route('/', {
     name: 'home',
     action() {
       mount(MainLayoutCtx, {
@@ -35,36 +32,10 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
-/* INSPECTIONS ROUTES */
-  // Home (inspections list)
-  FlowRouter.route('/', {
-    name: 'inspections.list',
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<InspectionList />)
-      });
-    }
-  });
-  // Single inspection
-  FlowRouter.route('/inspection/:inspectionId', {
-    name: 'inspections.single',
-    action({inspectionId}) {
-      mount(MainLayoutCtx, {
-        content: () => (<Inspection inspectionId={inspectionId} />)
-      });
-    }
-  });
-  // New inspection
-  FlowRouter.route('/new-inspection', {
-    name: 'newInspection',
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<NewInspection />)
-      });
-    }
-  });
 
-/* USERS ROUTES */
+/* -------------------------------------------------
+                USER ROUTES
+------------------------------------------------- */
   // User Register/SignUp
   FlowRouter.route('/register', {
     name: 'users.new',
@@ -92,17 +63,19 @@ export default function (injectDeps, {FlowRouter}) {
     }
   });
 
-/* WORKERS ROUTES */
-  // Workers list
+/* -------------------------------------------------
+                WORKER ROUTES
+------------------------------------------------- */
+  /// List of workers
   FlowRouter.route('/workers', {
-    name: 'workers.list',
+    name: 'workers.all',
     action() {
       mount(MainLayoutCtx, {
         content: () => (<Workers />)
       });
     }
   });
-  // Single worker
+  // Detail for single worker
   FlowRouter.route('/worker/:workerId', {
     name: 'workers.single',
     action({workerId}) {
@@ -111,27 +84,20 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
-  // New worker
-  FlowRouter.route('/new-worker', {
-    name: 'newWorker',
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<NewWorker />)
-      });
-    }
-  });
 
-/* COMPANIES ROUTES */
-  // Companies list
+/* -------------------------------------------------
+                COMPANY ROUTES
+------------------------------------------------- */
+  // List of companies
   FlowRouter.route('/companies', {
-    name: 'companies.list',
+    name: 'companies.all',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<CompanyList />)
+        content: () => (<Companies />)
       });
     }
   });
-  // Single company
+  // Detail for single company
   FlowRouter.route('/company/:companyId', {
     name: 'companies.single',
     action({companyId}) {
@@ -140,27 +106,20 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
-  // New company
-  FlowRouter.route('/new-company', {
-    name: 'newCompany',
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<NewCompany />)
-      });
-    }
-  });
 
-/* BUILDINGS ROUTES */
-  // Buildings list
+/* -------------------------------------------------
+                BUILDING ROUTES
+------------------------------------------------- */
+  // List of buildings
   FlowRouter.route('/buildings', {
-    name: 'buildings.list',
+    name: 'buildings.all',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<BuildingList />)
+        content: () => (<Buildings />)
       });
     }
   });
-  // Single building
+  // Detail for single building
   FlowRouter.route('/building/:buildingId', {
     name: 'buildings.single',
     action({buildingId}) {
@@ -169,12 +128,25 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
-  // New building
-  FlowRouter.route('/new-building', {
-    name: 'newBuilding',
+
+/* -------------------------------------------------
+                INSPECTION ROUTES
+------------------------------------------------- */
+  // List of inspections
+  FlowRouter.route('/inspections', {
+    name: 'inspections.all',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<NewBuilding />)
+        content: () => (<Inspections />)
+      });
+    }
+  });
+  // Detail for single inspection
+  FlowRouter.route('/inspection/:inspectionId', {
+    name: 'inspections.single',
+    action({inspectionId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<Inspection inspectionId={inspectionId} />)
       });
     }
   });
