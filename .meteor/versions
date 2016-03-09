@@ -72,6 +72,7 @@ msavin:mongol@1.6.2
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.40-modules.6
 observe-sequence@1.0.8-modules.6
+okland:camera-ui@0.0.2
 ordered-dict@1.0.4
 promise@0.5.2-modules.6
 random@1.0.6-modules.6
