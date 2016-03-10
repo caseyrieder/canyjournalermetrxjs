@@ -1,4 +1,5 @@
-import {Workers} from '/lib/collections';
+// import {Workers} from '/lib/collections';
+import {Workers} from '/lib/workers';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 // Handle methods for publishing Workers collection

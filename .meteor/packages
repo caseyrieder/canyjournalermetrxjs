@@ -16,14 +16,20 @@ standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
-kadira:flow-router-ssr
-reactive-dict
-audit-argument-checks
-check
-random
-accounts-password
-msavin:mongol
-mdg:geolocation
-mdg:camera
-aldeed:simple-schema
-okland:camera-ui
+##########################
+# Mantra base packages
+kadira:flow-router-ssr  # Kadira's router, supports server-side rendering
+reactive-dict           # Reactive dictionary
+audit-argument-checks   # Try to detect inadequate input sanitization
+check                   # Check whether a value matches a pattern
+random                  # Random number generator & utilities
+accounts-password       # Password support for accounts
+
+##########################
+# My add-ons
+msavin:mongol           # In-app mongodb editor
+mdg:geolocation         # Reactive geolocation
+mdg:camera              # Photos with one function call
+aldeed:simple-schema    # Simple reactive schema validation object
+okland:camera-ui        # Take photos with UI one function call
+aldeed:collection2      # Auto-validate insert & update on client/server
