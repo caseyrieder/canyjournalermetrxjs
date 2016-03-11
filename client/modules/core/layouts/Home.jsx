@@ -1,12 +1,10 @@
 import React from 'react';
+import AccountsUIWrapper from './AccountsUIWrapper.jsx';
 // Render Home component
 const Home = () => (
-  <div>
+  <div className='txt-ctr'>
     <h1>Welcome to CANY</h1>
-    <div className='home-links'>
-      <h3>If you are a new user, please <a href='/register'>register</a> here</h3>
-      <h3>If you are an existing user, please <a href='/login'>login</a> here</h3>
-    </div>
+    <AccountsUIWrapper />
   </div>
 );
 // Export home component
