@@ -1,6 +1,10 @@
 export default {
   // Create new inspection
   create({Meteor, LocalState, FlowRouter}, buildingId, title, content) {
+    // Prevent creation unless user is logged in
+    if (!Meteor.userId()) {
+      return LocalState.set('CREATE_INSPECTION_ERROR', 'Must be logged in to create new inspection.');
+    }
     // Handle empty title or content field
     if (!title || !content) {
       return LocalState.set('CREATE_INSPECTION_ERROR', 'Title & content are both required.');

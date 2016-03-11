@@ -6,7 +6,7 @@ const Worker = ({worker}) => (
     {worker.saving ? <p>Saving...</p> : null}
     <div className='text-center'>
       <h2>{worker.name}</h2>
-      <p>{worker.role} at {worker.companyId}</p>
+      <p>{worker.role} at {worker.employer}</p>
       <p className='worker-date'>{moment(worker.createdAt).format('MMM D')}</p>
     </div>
   </div>

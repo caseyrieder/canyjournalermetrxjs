@@ -1,6 +1,10 @@
 export default {
   // Create new company
   create({Meteor, LocalState, FlowRouter}, name, specialty) {
+    // Prevent creation unless user is logged in
+    if (!Meteor.userId()) {
+      return LocalState.set('CREATE_COMPANY_ERROR', 'Must be logged in to create new company.');
+    }
     // Handle empty name field
     if (!name) {
       return LocalState.set('CREATE_COMPANY_ERROR', 'Company name is required.');

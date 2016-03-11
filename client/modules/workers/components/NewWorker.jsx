@@ -7,7 +7,7 @@ class NewWorker extends React.Component {
       <div>
         {error ? <p style={{color: 'red'}}>{error}</p> : null}
         <form>
-          <input ref='companyId' type='hidden' value={this.props.companyId} />
+          <input ref='employer' type='hidden' value={this.props.employer} />
           <input ref='name' type='text' placeholder='Worker name...' />
           <input ref='role' type='text' placeholder='role...' />
           <button onClick={this.newWorker.bind(this)} type='submit'>Add</button>
@@ -19,8 +19,8 @@ class NewWorker extends React.Component {
   newWorker(e) {
     e.preventDefault();
     const {create} = this.props;
-    const {companyId, name, role} = this.refs;
-    create(companyId.value, name.value, role.value);
+    const {employer, name, role} = this.refs;
+    create(name.value, role.value, employer.value);
     name.value = '';
     role.value = '';
   }

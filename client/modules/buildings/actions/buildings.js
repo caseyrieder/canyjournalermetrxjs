@@ -1,6 +1,10 @@
 export default {
   // Create new building
   create({Meteor, LocalState, FlowRouter}, address, projectCode) {
+    // Prevent creation unless user is logged in
+    if (!Meteor.userId()) {
+      return LocalState.set('CREATE_BUILDING_ERROR', 'Must be logged in to create new building.');
+    }
     // Handle empty address or projectCode field
     if (!address || !projectCode) {
       return LocalState.set('CREATE_BUILDING_ERROR', 'Address & projectCode are both required.');

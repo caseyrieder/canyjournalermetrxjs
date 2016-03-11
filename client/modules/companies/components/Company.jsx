@@ -9,8 +9,8 @@ const Company = ({company}) => (
     <p>{company.specialty}</p>
     <div>
       <h3>Workers</h3>
-      <NewWorker companyId={company._id} />
-      <WorkerList companyId={company._id} />
+      <NewWorker employer={company.name} />
+      <WorkerList employer={company.name} />
     </div>
   </div>
 );

@@ -1,5 +1,4 @@
 import {Workers} from '/lib/collections';
-// import {Workers} from '/lib/workers';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 // Handle methods for publishing Workers collection
@@ -8,7 +7,7 @@ export default function () {
   Meteor.publish('workers.all', function () {
     const selector = {};
     const options = {
-      fields: {_id: 1, name: 1, role: 1, companyId: 1},
+      fields: {_id: 1, name: 1, role: 1, employer: 1},
       sort: {createdAt: -1}
     };
     return Workers.find(selector, options);
@@ -20,9 +19,9 @@ export default function () {
     return Workers.find(selector);
   });
   // Publish all workers for a single companyId
-  Meteor.publish('workers.company', function (companyId) {
-    check(companyId, String);
-    const selector = {companyId};
+  Meteor.publish('workers.company', function (employer) {
+    check(employer, String);
+    const selector = {employer};
     return Workers.find(selector);
   });
 }
