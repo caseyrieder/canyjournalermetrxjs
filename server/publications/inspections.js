@@ -18,7 +18,7 @@ export default function () {
     const selector = {_id: inspectionId};
     return Inspections.find(selector);
   });
-  // Publish all workers for a single company
+  // Publish all inspections for a single building
   Meteor.publish('inspections.building', function (buildingId) {
     check(buildingId, String);
     const selector = {buildingId};
