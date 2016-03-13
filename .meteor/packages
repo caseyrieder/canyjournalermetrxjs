@@ -4,36 +4,55 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-base             # Packages every Meteor app needs to have
-mobile-experience       # Packages for a great mobile UX
-mongo                   # The database Meteor supports right now
-blaze-html-templates    # Compile .html files into Meteor Blaze views
-session                 # Client-side reactive dictionary for your app
-jquery                  # Helpful client-side library
-tracker                 # Meteor's client-side reactive programming library
-standard-minifiers      # JS/CSS minifiers run for production mode
-es5-shim                # ECMAScript 5 compatibility for older browsers.
-ecmascript              # Enable ECMAScript2015+ syntax in app code
+meteor-base                 # Meteor necessities
+mobile-experience           # Packages for mobile UX
+mongo                       # Meteor default db
+blaze-html-templates        # Compile .html files into Blaze views
+session                     # Client-side reactive dictionary
+jquery                      # Helpful client-side library
+tracker                     # Meteor's client-side reactive lib
+standard-minifiers          # JS/CSS minifiers for production
+es5-shim                    # ECMAScript 5 backwords-compat
+ecmascript                  # Enable ECMAScript2015+ syntax
 
 ##########################
 # Mantra base packages
-kadira:flow-router-ssr  # Kadira's router, supports server-side rendering
-reactive-dict           # Reactive dictionary
-audit-argument-checks   # Try to detect inadequate input sanitization
-check                   # Check whether a value matches a pattern
-random                  # Random number generator & utilities
-accounts-password       # Password support for accounts
+kadira:flow-router-ssr      # Kadira's router, supports SSR
+reactive-dict               # Reactive dictionary
+audit-argument-checks       # Detect inadequate input sanitization
+check                       # Check whether val matches pattern
+random                      # Random num generator & utils
+accounts-password           # Password support for accounts
 
 ##########################
 # My add-ons
-msavin:mongol           # In-app mongodb editor
-mdg:geolocation         # Reactive geolocation
-mdg:camera              # Photos with one function call
-aldeed:simple-schema    # Simple reactive schema validation object
-okland:camera-ui        # Take photos with UI one function call
-aldeed:collection2      # Auto-validate insert & update on client/server
+msavin:mongol               # In-app mongodb editor
+mdg:geolocation             # Reactive geolocation
+mdg:camera                  # Photos with one fxn call
+aldeed:simple-schema        # Simple schema validation
+okland:camera-ui            # Take photos with UI one fxn call
+aldeed:collection2          # Auto-validate insert & update
 
 ##########################
 # Accounts & Users
-accounts-ui             # Basic templates for user accounts
-useraccounts:unstyled   # Accounts Templates - unstyled
+accounts-ui                 # Basic accounts templates
+useraccounts:unstyled       # Accounts Templates unstyled
+
+##########################
+# MORE
+# UserAccounts Routing
+useraccounts:flow-routing   # UserAccounts for flow router
+
+# Method-related
+mdg:validated-method        # Meteor methods wrapper
+mdg:validation-error        # Standard for form/method validation
+underscore                  # Collection of small helpers
+
+# Collection-Related
+dburles:collection-helpers  # Define helpers for collections
+reywood:publish-composite   # Publish docs from multiple collections
+
+# Template & Other
+aldeed:template-extension   # Adds template features
+less                        # Leaner CSS
+reactive-var                # Reactive variable

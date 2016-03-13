@@ -26,16 +26,16 @@
   },
   "dependencies": {
     "domready": "^1.0.8",
+    "flexboxgrid": "^6.3.0",
+    "formsy-material-ui": "^0.3.8",
+    "formsy-react": "0.17.0",
+    "formsy-react-components": "0.6.6",
     "mantra-core": "^1.2.0",
     "material-ui": "^0.14.4",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
     "react-mounter": "^1.0.0",
-    "react-tap-event-plugin": "^0.2.2",
-
-    "formsy-react": "0.17.0",
-    "formsy-react-components": "0.6.6",
-    "formsy-material-ui": "^0.3.8" 
+    "react-tap-event-plugin": "^0.2.2"
   },
   "private": true
 }
