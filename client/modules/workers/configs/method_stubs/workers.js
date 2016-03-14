@@ -1,23 +1,33 @@
 import {check} from 'meteor/check';
 
 export default function ({Meteor, Collections}) {
-  // Run 'insert' for latency compensation
   Meteor.methods({
-    'workers.create'(_id, name, role, employer) {
-      // Check arguments
+    // create new worker for latency compensation
+    'addWorker'(_id, name, role, employer) {
+      // Authorize
+      if(!Meteor.userId()) {
+        throw new Meteor.Error('not-authorized');
+      }
+      // Check arguments, add date
       check(_id, String);
       check(name, String);
       check(role, String);
       check(employer, String);
-      // Add date
       const createdAt = new Date();
-      // Create newworker object
       const worker = {
         _id, name, role, employer, createdAt,
         saving: true
       };
-      // Insert new worker into collection
       Collections.Workers.insert(worker);
+    },
+    // assign worker to user for latency compensation
+    'linkWorkerToUser'(_id, usrId) {
+      if(Meteor.userId() !== usrId) {
+        throw new Meteor.Error('not-authorized');
+      }
+      check(_id, String);
+      check(usrId, String);
+      Collections.Workers.update(_id, {$set:{userId: usrId}});
     }
   });
 }

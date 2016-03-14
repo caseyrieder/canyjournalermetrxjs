@@ -18,7 +18,7 @@ export default {
     // Create uuid for latency compensation, via method in config/method_stubs
     const id = Meteor.uuid();
     // Call create method on workers collection & handle error
-    Meteor.call('workers.create', id, name, role, employer, (err) => {
+    Meteor.call('addWorker', id, name, role, employer, (err) => {
       if (err) {
         return LocalState.set('CREATE_WORKER_ERROR', err.message);
       }

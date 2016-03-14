@@ -9,8 +9,7 @@ import Home from './layouts/Home.jsx';
 /* USER CONTAINERS */
 import Register from '../users/containers/Register.js';
 import Login from '../users/containers/Login.js';
-// import Confirm from '../users/containers/Confirm.js';
-// import Account from '../users/containers/Account.js';
+import Confirm from '../users/containers/Confirm.js';
 // import PasswordReset from '../users/containers/PasswordReset.js';
 
 /* LIST COMPONENTS */
@@ -59,24 +58,15 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
-  // // User Confirm
-  // FlowRouter.route('/confirm/:userId', {
-  //   name: 'users.confirm',
-  //   action({userId}) {
-  //     mount(MainLayoutCtx, {
-  //       content: () => (<Confirm />)
-  //     });
-  //   }
-  // });
-  // // User Account View & Edit
-  // FlowRouter.route('/account/:userId', {
-  //   name: 'users.account',
-  //   action({userId}) {
-  //     mount(MainLayoutCtx, {
-  //       content: () => (<Account />)
-  //     })
-  //   }
-  // });
+  // User Confirm
+  FlowRouter.route('/confirm/:userId', {
+    name: 'users.confirm',
+    action({userId}) {
+      mount(MainLayoutCtx, {
+        content: () => (<Confirm />)
+      });
+    }
+  });
   // // User Password Reset
   // FlowRouter.route('/passreset/:userId', {
   //   name: 'users.passreset',

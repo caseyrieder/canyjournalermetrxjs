@@ -1,16 +1,16 @@
-import Confirm from '../components/Confirm.jsx';
+import PasswordReset from '../components/PasswordReset.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 
 export const composer = ({context, clearErrors}, onData) => {
   const {LocalState} = context();
-  const error = LocalState.get('CONFIRM_ERROR');
+  const error = LocalState.get('PASSWORD_RESET_ERROR');
   onData(null, {error});
   // clearErrors when unmounting the component
   return clearErrors;
 };
 
 export const depsMapper = (context, actions) => ({
-  confirm: actions.users.confirm,
+  // pwdreset: actions.users.resetPwd,
   clearErrors: actions.users.clearErrors,
   context: () => context
 });
@@ -18,4 +18,4 @@ export const depsMapper = (context, actions) => ({
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)
-)(Confirm);
+)(PasswordReset);

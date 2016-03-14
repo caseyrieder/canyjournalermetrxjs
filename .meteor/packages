@@ -34,15 +34,7 @@ okland:camera-ui            # Take photos with UI one fxn call
 aldeed:collection2          # Auto-validate insert & update
 
 ##########################
-# Accounts & Users
-accounts-ui                 # Basic accounts templates
-useraccounts:unstyled       # Accounts Templates unstyled
-
-##########################
 # MORE
-# UserAccounts Routing
-useraccounts:flow-routing   # UserAccounts for flow router
-
 # Method-related
 mdg:validated-method        # Meteor methods wrapper
 mdg:validation-error        # Standard for form/method validation
