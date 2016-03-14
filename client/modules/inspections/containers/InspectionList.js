@@ -1,6 +1,6 @@
 import InspectionList from '../components/InspectionList.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
-// Set state, subscribe to inspections & send as variable to composer
+// Set subscription to inspections & send as variable to composer
 export const composer = ({context, clearErrors, buildingId}, onData) => {
   const {Meteor, Collections} = context();
   if (buildingId) {

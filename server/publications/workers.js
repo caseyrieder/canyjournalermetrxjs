@@ -18,10 +18,22 @@ export default function () {
     const selector = {_id: workerId};
     return Workers.find(selector);
   });
-  // Publish all workers for a single companyId
+  // Publish all workers for a single employer
   Meteor.publish('workers.company', function (employer) {
     check(employer, String);
     const selector = {employer};
+    return Workers.find(selector);
+  });
+  // Publish all workers for a single buildingId
+  Meteor.publish('workers.building', function (buildingId) {
+    check(buildingId, String);
+    const selector = {buildingId};
+    return Workers.find(selector);
+  });
+  // Publish all workers for a single inspectionId
+  Meteor.publish('workers.inspection', function (inspectionId) {
+    check(inspectionId, String);
+    const selector = {inspectionId};
     return Workers.find(selector);
   });
 }
