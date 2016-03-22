@@ -1,5 +1,7 @@
 accounts-base@1.2.3-modules.6
 accounts-password@1.1.5-modules.6
+accounts-ui@1.1.6
+accounts-ui-unstyled@1.1.9-modules.6
 aldeed:collection2@2.9.0
 aldeed:collection2-core@1.1.0
 aldeed:schema-deny@1.0.1
@@ -94,6 +96,7 @@ routepolicy@1.0.7-modules.6
 service-configuration@1.0.6-modules.6
 session@1.1.2-modules.6
 sha@1.0.4
+softwarerero:accounts-t9n@1.1.7
 spacebars@1.0.8-modules.6
 spacebars-compiler@1.0.8-modules.6
 srp@1.0.5-modules.6
@@ -103,8 +106,11 @@ standard-minifiers-js@1.0.3-modules.6
 templating@1.1.6-modules.6
 templating-tools@1.0.1-modules.6
 tracker@1.0.10-modules.6
+twbs:bootstrap@3.3.6
 ui@1.0.8
 underscore@1.0.5-modules.6
 url@1.0.6-modules.6
+useraccounts:core@1.13.1
+useraccounts:materialize@1.13.1
 webapp@1.2.4-modules.6
 webapp-hashing@1.0.6-modules.6

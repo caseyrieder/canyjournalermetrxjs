@@ -4,7 +4,8 @@ import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
 export const composer = ({context, clearErrors}, onData) => {
   const {LocalState} = context();
   const error = LocalState.get('CREATE_INSPECTION_ERROR');
-  onData(null, {error});
+  const inspNum = LocalState.get('INSPECTION_COUNTER');
+  onData(null, {error, inspNum});
   // clearErrors when unmounting the component
   return clearErrors;
 };

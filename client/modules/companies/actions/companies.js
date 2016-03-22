@@ -20,6 +20,11 @@ export default {
       }
     });
   },
+  // Select multiple companies & save into state
+  selectMany({LocalState}, firms) {
+    console.log("New companies: " + firms);
+    return LocalState.set('CHOSEN_COMPANIES', firms);
+  },
   // Clear errors in LocalState
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null);

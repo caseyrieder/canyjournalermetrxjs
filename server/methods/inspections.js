@@ -5,13 +5,13 @@ import {check} from 'meteor/check';
 export default function () {
   Meteor.methods({
     // Check args, add date, insert into collection
-    'inspections.create'(_id, buildingId, title, content) {
+    'inspections.create'(_id, buildingId, inspNum, inspector) {
       check(_id, String);
       check(buildingId, String);
-      check(title, String);
-      check(content, String);
+      check(inspNum, Number);
+      check(inspector, String);
       const createdAt = new Date();
-      const inspection = {_id, buildingId, title, content, createdAt};
+      const inspection = {_id, buildingId, inspNum, inspector, createdAt};
       Inspections.insert(inspection);
     },
     // Add company to inspection

@@ -20,6 +20,11 @@ export default {
       }
     });
   },
+  // Select building & save it into state
+  selectOne({LocalState}, worksite) {
+    console.log("New site: " + worksite);
+    return LocalState.set('CHOSEN_SITE', worksite);
+  },
   // Clear errors in LocalState
   clearErrors({LocalState}) {
     return LocalState.set('SAVING_ERROR', null);

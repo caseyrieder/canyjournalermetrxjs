@@ -48,3 +48,7 @@ reywood:publish-composite   # Publish docs from multiple collections
 aldeed:template-extension   # Adds template features
 less                        # Leaner CSS
 reactive-var                # Reactive variable
+
+accounts-ui
+useraccounts:materialize
+twbs:bootstrap
